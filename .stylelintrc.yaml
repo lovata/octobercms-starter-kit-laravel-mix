@@ -1,0 +1,343 @@
+ignoreFiles:
+  # NPM
+  - node_modules/**/*
+  # October
+  - themes/**/assets/css/*
+  # Laravel
+  - public/assets/css/*
+  # Angular /dist folder
+  - dist/**/*
+  # VSCode .history plugin
+  - .history/**/*
+
+
+rules:
+  # Color
+  ## Possible errors
+  color-no-invalid-hex: true
+  ## Limit language features
+  color-named: never
+  # DISABLED: color-no-hex
+  ## Stylistic issues
+  color-hex-case: lower
+  color-hex-length: long
+
+  # Font family
+  ## Possible errors
+  font-family-no-duplicate-names: true
+  font-family-no-missing-generic-family-keyword: true
+  ## Stylistic issues
+  font-family-name-quotes: always-where-recommended
+
+  # Font weight
+  ## Stylistic issues
+  font-weight-notation: numeric
+
+  # Function
+  ## Possible errors
+  function-calc-no-unspaced-operator: true
+  function-linear-gradient-no-nonstandard-direction: true
+  ## Limit language features
+  # DISABLED: function-blacklist
+  # DISABLED: function-url-no-scheme-relative
+  function-url-scheme-blacklist:
+    - ftp
+    - /^http/
+    - /^data/
+  # DISABLED: function-url-scheme-whitelist
+  # DISABLED: function-whitelist
+  ## Stylistic issues
+  function-comma-newline-after: never-multi-line
+  function-comma-newline-before: never-multi-line
+  function-comma-space-after: always
+  function-comma-space-before: never
+  function-max-empty-lines: 0
+  function-name-case: lower
+  function-parentheses-newline-inside: always-multi-line
+  function-parentheses-space-inside: never
+  function-url-quotes: always
+  function-whitespace-after: always
+
+  # Keyframes
+  ## Limit language features
+  # DISABLED: keyframe-name-pattern
+
+  # Number
+  ## Limit language features
+  number-max-precision: 4
+  ## Stylistic issues
+  number-leading-zero: always
+  number-no-trailing-zeros: true
+
+  # Time
+  ## Limit language features
+  time-min-milliseconds: 100
+
+  # String
+  ## Possible errors
+  string-no-newline: true
+  ## Stylistic issues
+  string-quotes: single
+
+  # Length
+  ## Stylistic issues
+  length-zero-no-unit: true
+
+  # Unit
+  ## Possible errors
+  unit-no-unknown: true
+  ## Limit language features
+  unit-blacklist:
+    - pt
+    - cm
+    - mm
+    - in
+    - pc
+  # DISABLED: unit-whitelist
+  ## Stylistic issues
+  unit-case: lower
+
+  # Shorthand property
+  ## Limit language features
+  shorthand-property-no-redundant-values: true
+
+  # Value
+  ## Limit language features
+  value-no-vendor-prefix: true
+  ## Stylistic issues
+  value-keyword-case: lower
+
+  # Value list
+  ## Stylistic issues
+  value-list-comma-newline-after: always-multi-line
+  value-list-comma-newline-before: never-multi-line
+  value-list-comma-space-after: always-single-line
+  value-list-comma-space-before: never
+  value-list-max-empty-lines: 0
+
+  # Custom property
+  ## Limit language features
+  # DISABLED: custom-property-pattern
+  ## Stylistic issues
+  custom-property-empty-line-before: never
+
+  # Property
+  ## Possible errors
+  property-no-unknown: true
+  ## Limit language features
+  property-blacklist:
+    - animation
+    - background
+    - columns
+    - flex
+    - font
+  property-no-vendor-prefix: true
+  # DISABLED: property-whitelist
+  # Stylistic issues
+  property-case: lower
+
+  # Keyframe declaration
+  ## Possible errors
+  keyframe-declaration-no-important: true
+
+  # Declaration
+  ## Limit language features
+  # DISABLED: declaration-block-no-redundant-longhand-properties
+  declaration-no-important: true
+  # DISABLED: declaration-property-unit-blacklist
+  declaration-property-unit-whitelist:
+    font-size:
+      - "rem"
+      - "px"
+    /^animation/:
+      - "ms"
+  declaration-property-value-blacklist:
+    border:
+      - /0/
+    src:
+      - /.eot/
+      - /.ttf/
+      - /.otf/
+      - /.svg/
+  declaration-property-value-whitelist:
+    -
+      /color/:
+        - /^var\(--color-/
+      /^fill/:
+        - /^var\(--color-/
+      /^stroke/:
+        - /^var\(--color-/
+      /font-family/:
+        - /^var\(--font-family-/
+      /font-size/:
+        - /^var\(--font-size-/
+    - message: "It's allowed to use only \"var(--var)\" for different color (--color-NAME) and font (--font-family-NAME, --font-size-NAME) props"
+  ## Stylistic issues
+  declaration-bang-space-after: never
+  declaration-bang-space-before: always
+  declaration-colon-newline-after: always-multi-line
+  declaration-colon-space-after: always-single-line
+  declaration-colon-space-before: never
+  declaration-empty-line-before: never
+
+  # Declaration block
+  ## Possible errors
+  declaration-block-no-duplicate-properties: true
+  declaration-block-no-shorthand-property-overrides: true
+  ## Limit language features
+  declaration-block-single-line-max-declarations: 1
+  ## Stylistic issues
+  declaration-block-semicolon-newline-after: always
+  declaration-block-semicolon-newline-before: never-multi-line
+  # DISABLED: declaration-block-semicolon-space-after
+  declaration-block-semicolon-space-before: never
+  declaration-block-trailing-semicolon: always
+
+  # Block
+  ## Possible errors
+  block-no-empty: true
+  ## Stylistic issues
+  block-closing-brace-empty-line-before: never
+  block-closing-brace-newline-after: always
+  block-closing-brace-newline-before: always
+  # DISABLED: block-closing-brace-space-after
+  # DISABLED: block-closing-brace-space-before
+  block-opening-brace-newline-after: always
+  # DISABLED: block-opening-brace-newline-before
+  # DISABLED: block-opening-brace-space-after
+  block-opening-brace-space-before: always
+
+  # Selector
+  ## Possible errors
+  selector-pseudo-class-no-unknown: true
+  selector-pseudo-element-no-unknown: true
+  selector-type-no-unknown: true
+  ## Limit language features
+  # DISABLED: selector-attribute-operator-blacklist
+  # DISABLED: selector-attribute-operator-whitelist
+  # DISABLED: selector-class-pattern
+  # DISABLED: selector-combinator-blacklist
+  # DISABLED: selector-combinator-whitelist
+  # DISABLED: selector-id-pattern
+  selector-max-attribute: 0
+  selector-max-class: 2
+  selector-max-combinators: 2
+  selector-max-compound-selectors: 3
+  selector-max-empty-lines: 0
+  selector-max-id: 0
+  selector-max-pseudo-class: 3
+  selector-max-specificity: 0,3,1
+  selector-max-type: 0
+  selector-max-universal: 1
+  # DISABLED: selector-nested-pattern
+  selector-no-qualifying-type: true
+  selector-no-vendor-prefix: true
+  # DISABLED: selector-pseudo-class-blacklist
+  # DISABLED: selector-pseudo-class-whitelist
+  # DISABLED: selector-pseudo-element-blacklist
+  # DISABLED: selector-pseudo-element-whitelist
+  ## Stylistic issues
+  selector-attribute-brackets-space-inside: never
+  selector-attribute-operator-space-after: never
+  selector-attribute-operator-space-before: never
+  selector-attribute-quotes: always
+  selector-combinator-space-after: always
+  selector-combinator-space-before: always
+  selector-descendant-combinator-no-non-space: true
+  selector-pseudo-class-case: lower
+  selector-pseudo-class-parentheses-space-inside: never
+  selector-pseudo-element-case: lower
+  selector-pseudo-element-colon-notation: double
+  selector-type-case: lower
+
+  # Selector list
+  ## Stylistic issues
+  selector-list-comma-newline-after: always
+  selector-list-comma-newline-before: never-multi-line
+  selector-list-comma-space-after: never-single-line
+  selector-list-comma-space-before: never
+
+  # Rule
+  ## Stylistic issues
+  rule-empty-line-before:
+    - always
+    - except: first-nested
+
+  # Media feature
+  ## Possible errors
+  media-feature-name-no-unknown: true
+  ## Limit language features
+  # DISABLED: media-feature-name-blacklist
+  media-feature-name-no-vendor-prefix: true
+  # DISABLED: media-feature-name-value-whitelist
+  # DISABLED: media-feature-name-whitelist
+  ## Stylistic issues
+  media-feature-colon-space-after: always
+  media-feature-colon-space-before: never
+  media-feature-name-case: lower
+  media-feature-parentheses-space-inside: never
+  media-feature-range-operator-space-after: always
+  media-feature-range-operator-space-before: always
+
+  # Custom media
+  ## Limit language features
+  # DISABLED: custom-media-pattern
+
+  # Media query list
+  ## Stylistic issues
+  media-query-list-comma-newline-after: always
+  media-query-list-comma-newline-before: never-multi-line
+  media-query-list-comma-space-after: always
+  media-query-list-comma-space-before: never
+
+  # At-rule
+  ## Possible errors
+  at-rule-no-unknown: true
+  ## Limit language features
+  # DISABLED: at-rule-blacklist
+  at-rule-no-vendor-prefix: true
+  # DISABLED: at-rule-whitelist
+  ## Stylistic issues
+  at-rule-empty-line-before:
+    - always
+    - except: blockless-after-blockless
+  at-rule-name-case: lower
+  # DISABLED: at-rule-name-newline-after
+  at-rule-name-space-after: always
+  # DISABLED: at-rule-semicolon-newline-after
+  at-rule-semicolon-space-before: never
+
+  # Comment
+  ## Possible errors
+  comment-no-empty: true
+  ## Limit language features
+  comment-word-blacklist:
+    -
+      - /^TODO:/
+      - /^FIXME:/
+    - severity: warning
+  ## Stylistic issues
+  comment-empty-line-before:
+    - always
+    - except: first-nested
+  comment-whitespace-inside: always
+
+  # General / Sheet
+  ## Possible errors
+  no-descending-specificity: true
+  no-duplicate-at-import-rules: true
+  no-duplicate-selectors: true
+  no-empty-source: true
+  no-extra-semicolons: true
+  no-invalid-double-slash-comments: true
+  ## Limit language features
+  max-nesting-depth: 3
+  no-unknown-animations: true
+  ## Stylistic issues
+  indentation: 2
+  #DISABLE: linebreaks
+  max-empty-lines: 1
+  max-line-length: 100
+  no-eol-whitespace: true
+  no-missing-end-of-source-newline: true
+  no-empty-first-line: true

@@ -1,0 +1,51 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "npm run imagemin && cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "imagemin": "./node_modules/.bin/imagemin themes/THEME_NAME/assets/img* --out-dir=themes/THEME_NAME/assets/img",
+    "lint:css": "./node_modules/.bin/stylelint themes/THEME_NAME/partials/**/*.css themes/THEME_NAME/css/**/*.css --fix",
+    "lint:js": "./node_modules/.bin/eslint themes/THEME_NAME/partials/**/*.js themes/THEME_NAME/js/**/*.js --fix"
+  },
+  "pre-commit": [
+    "lint:css",
+    "lint:js"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "copyfiles": "^2.1.0",
+    "cross-env": "^5.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-vue": "^4.7.1",
+    "imagemin-cli": "^3.0.0",
+    "laravel-mix": "^4.0.4",
+    "laravel-mix-eslint": "^0.1.2",
+    "laravel-mix-stylelint": "^0.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "pngquant-bin": "^3.1.1",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
+    "postcss-url": "^8.0.0",
+    "pre-commit": "^1.2.2",
+    "stylelint": "^9.7.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-webpack-plugin": "^0.10.5"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.4.2",
+    "awecssome": "^0.7.0",
+    "jquery": "^3.3.1"
+  }
+}
