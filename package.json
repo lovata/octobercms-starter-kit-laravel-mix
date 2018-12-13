@@ -8,9 +8,9 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "npm run imagemin && cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "imagemin": "./node_modules/.bin/imagemin themes/THEME_NAME/assets/img* --out-dir=themes/THEME_NAME/assets/img",
-    "lint:css": "./node_modules/.bin/stylelint themes/THEME_NAME/partials/**/*.css themes/THEME_NAME/css/**/*.css --fix",
-    "lint:js": "./node_modules/.bin/eslint themes/THEME_NAME/partials/**/*.js themes/THEME_NAME/js/**/*.js --fix"
+    "imagemin": "./node_modules/.bin/imagemin themes/{{ THEME_NAME }}/assets/img* --out-dir=themes/{{ THEME_NAME }}/assets/img",
+    "lint:css": "./node_modules/.bin/stylelint themes/{{ THEME_NAME }}/partials/**/*.css themes/{{ THEME_NAME }}/css/**/*.css --fix",
+    "lint:js": "./node_modules/.bin/eslint themes/{{ THEME_NAME }}/partials/**/*.js themes/{{ THEME_NAME }}/js/**/*.js --fix"
   },
   "pre-commit": [
     "lint:css",

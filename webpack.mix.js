@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 mix.options({
   clearConsole: true,
 })
-  .setPublicPath('themes/THEME_NAME/assets')
+  .setPublicPath('themes/{{ THEME_NAME }}/assets')
   .webpackConfig(webpack => {
     return {
       plugins: [
