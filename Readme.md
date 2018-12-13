@@ -1,4 +1,2 @@
-# If you want to use jquery and OctoberCMS framework in your project
-
-You should 
+# October CMS Starter Kit based on laravel-mix by LOVATA
 
