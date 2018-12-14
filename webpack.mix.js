@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 mix.options({
   clearConsole: true,
 })
-  .setPublicPath('themes/{{ THEME_NAME }}/assets')
+  .setPublicPath('themes/{{ THEME_NAME }}/assets/')
   .webpackConfig(webpack => {
     return {
       plugins: [
@@ -22,7 +22,7 @@ mix.options({
           'window.$': 'jquery'
         }),
         new CopyWebpackPlugin([{
-          from: 'partials/**/*',
+          from: 'themes/{{ THEME_NAME }}/partials/**/*',
           to: 'img/',
           ignore: ['*.js', '*.css', '*.htm'],
           flatten: true
@@ -31,7 +31,7 @@ mix.options({
     }
   })
   .stylelint()
-  .postCss('./common.css', 'css',
+  .postCss('./themes/{{ THEME_NAME }}/common.css', 'css',
     [
       require('postcss-import')(),
       require('postcss-url')({
@@ -46,11 +46,11 @@ mix.options({
       }),
       require('autoprefixer')(),
     ])
-  .js('./common.js', 'js')
+  .js('./themes/{{ THEME_NAME }}/common.js', 'js')
   .eslint({
     fix: true,
     cache: false,
-    failOnError: true,
+    failOnError: false,
     configFile: '.eslintrc.json',
   })
   .extract()

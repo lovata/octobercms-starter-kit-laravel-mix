@@ -1,0 +1,5 @@
+name: {{ THEME_NAME }}
+description: ''
+author: LOVATA
+homepage: ''
+code: '{{ THEME_NAME }}'

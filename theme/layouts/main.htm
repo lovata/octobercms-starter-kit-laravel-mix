@@ -2,11 +2,13 @@
 <?php
 function onInit()
 {
+    $sThemePath = 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets';
+
     try {
-        $this['path_css'] = mix('css/common.css', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
-        $this['path_appjs'] = mix('js/common.js', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
-        $this['path_manifestjs'] = mix('js/manifest.js', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
-        $this['path_vendorjs'] = mix('js/vendor.js', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
+        $this['path_css'] = mix('css/common.css', $sThemePath);
+        $this['path_appjs'] = mix('js/common.js', $sThemePath);
+        $this['path_manifestjs'] = mix('js/manifest.js', $sThemePath);
+        $this['path_vendorjs'] = mix('js/vendor.js', $sThemePath);
     } catch(\Exception $obException) {}
 }
 ?>

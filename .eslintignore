@@ -1,3 +1,4 @@
 /node_modules/**
 /assets/vendor/**
-/modules/system/assets/js/framework';
+/modules/**
+/plugins/**
