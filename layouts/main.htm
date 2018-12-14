@@ -1,0 +1,39 @@
+==
+<?php
+function onInit()
+{
+    try {
+        $this['path_css'] = mix('css/common.css', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
+        $this['path_appjs'] = mix('js/common.js', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
+        $this['path_manifestjs'] = mix('js/manifest.js', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
+        $this['path_vendorjs'] = mix('js/vendor.js', 'themes/'.\Cms\Classes\Theme::getActiveTheme()->getDirName().'/assets');
+    } catch(\Exception $obException) {}
+}
+?>
+==
+{% spaceless %}
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ path_css }}">
+        <link rel="icon" type="image/png" href="{{ 'assets/img/favicon.ico'|theme }}" sizes="16x16">
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <main>
+            {% page %}
+        </main>
+        <footer>
+
+        </footer>
+        <script src="{{ path_manifestjs }}"></script>
+        <script src="{{ path_vendorjs }}"></script>
+        <script src="{{ path_appjs }}"></script>
+        {% scripts %}
+    </body>
+</html>
+{% endspaceless %}
