@@ -15,7 +15,7 @@ mix.options({
       plugins: [
         new StyleLintPlugin({
           files: ['./partials/**/*.css', './css/**/*.css'],
-          configFile: '.stylelintrc.yaml',
+          configFile: '.stylelintrc',
         }),
         new webpack.ProvidePlugin({
           $: 'jquery',
