@@ -4,6 +4,8 @@ const eslint = require('laravel-mix-eslint');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const isLocal = process.env.LOCAL_DEV || false;
+
 mix.options({
   clearConsole: true,
 })
@@ -51,7 +53,7 @@ mix.options({
     fix: true,
     cache: false,
     failOnError: false,
-    configFile: '.eslintrc.json',
+    configFile: isLocal ? '.local.eslintrc' : '.eslintrc',
   })
   .extract()
   .version();

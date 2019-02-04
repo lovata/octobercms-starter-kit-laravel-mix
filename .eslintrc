@@ -1,5 +1,5 @@
 {
-    "extends": "airbnb",
+    "extends": "eslint-config-lovata/.eslintrc",
     "env": {
       "browser": true,
       "jquery": true
