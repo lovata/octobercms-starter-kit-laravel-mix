@@ -14,7 +14,7 @@ mix.options({
     return {
       plugins: [
         new StyleLintPlugin({
-          files: ['./partials/**/*.css', './css/**/*.css'],
+          files: ['./themes/{{ THEME_NAME }}/partials/**/*.css', './themes/{{ THEME_NAME }}/css/**/*.css'],
           configFile: '.stylelintrc',
         }),
         new webpack.ProvidePlugin({
