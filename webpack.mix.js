@@ -4,49 +4,53 @@ const eslint = require('laravel-mix-eslint');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const postcssImport = require('postcss-import');
+const postcssUrl = require('postcss-url');
+const postcssNested = require('postcss-nested');
+const postcssPresetEnv = require('postcss-preset-env');
+const autoprefixer = require('autoprefixer');
+
 const isLocal = process.env.LOCAL_DEV || false;
 
 mix.options({
   clearConsole: true,
 })
   .setPublicPath('themes/{{ THEME_NAME }}/assets/')
-  .webpackConfig(webpack => {
-    return {
-      plugins: [
-        new StyleLintPlugin({
-          files: ['./themes/{{ THEME_NAME }}/partials/**/*.css', './themes/{{ THEME_NAME }}/css/**/*.css'],
-          configFile: '.stylelintrc',
-        }),
-        new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery',
-          'window.jQuery': 'jquery',
-          'window.$': 'jquery'
-        }),
-        new CopyWebpackPlugin([{
-          from: 'themes/{{ THEME_NAME }}/partials/**/*',
-          to: 'img/',
-          ignore: ['*.js', '*.css', '*.htm'],
-          flatten: true
-        }]),
-      ],
-    }
-  })
+  .webpackConfig(webpack => ({
+    plugins: [
+      new StyleLintPlugin({
+        files: ['./themes/{{ THEME_NAME }}/partials/**/*.css', './themes/{{ THEME_NAME }}/css/**/*.css'],
+        configFile: '.stylelintrc',
+      }),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery',
+      }),
+      new CopyWebpackPlugin([{
+        from: 'themes/{{ THEME_NAME }}/partials/**/*',
+        to: 'img/',
+        ignore: ['*.js', '*.css', '*.htm'],
+        flatten: true,
+      }]),
+    ],
+  }))
   .stylelint()
   .postCss('./themes/{{ THEME_NAME }}/common.css', 'css',
     [
-      require('postcss-import')(),
-      require('postcss-url')({
-        url: "rebase",
+      postcssImport(),
+      postcssUrl({
+        url: 'rebase',
       }),
-      require('postcss-nested')(),
-      require('postcss-preset-env')({
+      postcssNested(),
+      postcssPresetEnv({
         stage: 3,
         features: {
           'nesting-rules': true,
         },
       }),
-      require('autoprefixer')(),
+      autoprefixer(),
     ])
   .js('./themes/{{ THEME_NAME }}/common.js', 'js')
   .eslint({
