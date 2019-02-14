@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
-const stylelint = require('laravel-mix-stylelint');
-const eslint = require('laravel-mix-eslint');
+
+require('laravel-mix-eslint');
+require('laravel-mix-stylelint');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
