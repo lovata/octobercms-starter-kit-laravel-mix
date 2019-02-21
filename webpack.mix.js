@@ -54,6 +54,7 @@ mix.options({
       autoprefixer(),
     ])
   .js('./themes/{{ THEME_NAME }}/common.js', 'js')
+  .sourceMaps(true, 'source-map')
   .eslint({
     fix: true,
     cache: false,
