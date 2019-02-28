@@ -14,7 +14,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:css & npm run lint:js",
+      "pre-commit": "npm run lint:css && npm run lint:js",
       "post-merge": "post-npm-install",
       "post-rebase": "post-npm-install"
     }
