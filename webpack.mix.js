@@ -4,6 +4,7 @@ require('laravel-mix-eslint');
 require('laravel-mix-stylelint');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const postcssImport = require('postcss-import');
 const postcssUrl = require('postcss-url');
@@ -35,6 +36,7 @@ mix.options({
         ignore: ['*.js', '*.css', '*.htm'],
         flatten: true,
       }]),
+      new BundleAnalyzerPlugin(),
     ],
   }))
   .stylelint()
