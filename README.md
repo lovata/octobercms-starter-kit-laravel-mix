@@ -3,14 +3,14 @@
 ### Webpack command list
 
 ```bash
-mpn run dev
-mpn run development
-mpn run watch
-mpn run watch-poll
-mpn run hot
-mpn run prod
-mpn run production
-mpn run imagemin
-mpn run lint:css
-mpn run lint:js
+npm run dev
+npm run development
+npm run watch
+npm run watch-poll
+npm run hot
+npm run prod
+npm run production
+npm run imagemin
+npm run lint:css
+npm run lint:js
 ```
