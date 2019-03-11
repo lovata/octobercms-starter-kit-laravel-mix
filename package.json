@@ -28,7 +28,8 @@
     "imagemin-cli": "^3.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "pngquant-bin": "^3.1.1",
-    "post-npm-install": "^1.0.0"
+    "post-npm-install": "^1.0.0",
+    "webpack-bundle-analyzer": "^3.0.4"
   },
   "dependencies": {
     "autoprefixer": "^9.4.7",
