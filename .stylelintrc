@@ -1,3 +1,10 @@
 {
-  "extends": "eslint-config-lovata/.stylelintrc"
+  "extends": "eslint-config-lovata/.stylelintrc",
+  "rules": {
+    "csstools/value-no-unknown-custom-properties": [true, {
+      "importFrom": [
+        "./themes/{{ THEME_NAME }}/css/variables.css"
+      ]
+    }
+  }
 }
