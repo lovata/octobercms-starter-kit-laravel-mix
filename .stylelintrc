@@ -5,6 +5,6 @@
       "importFrom": [
         "./themes/{{ THEME_NAME }}/css/variables.css"
       ]
-    }
+    }]
   }
 }
